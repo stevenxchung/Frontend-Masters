@@ -6,3 +6,23 @@ foo = x => 2;
 function foo() {
   return 2;
 }
+
+// Syntax variations
+// There are various ways to write the arrow function
+/*
+=> 3
+() => 3
+x => 3
+(...x) => 3
+(x, y) => 3
+x => { try { 3; } catch(e) {} }
+x => { return 3; }
+x => ({ y:x })
+*/
+
+// Arrow functions are anonymous functions, there are no names attached to the arrow
+// You can name inference arrow functions
+var foo = x => 3;
+foo.name; // 'foo'
+// However, most of the arrow functions you will write will be anonymous
+foo(x => 3);
