@@ -26,3 +26,10 @@ var foo = x => 3;
 foo.name; // 'foo'
 // However, most of the arrow functions you will write will be anonymous
 foo(x => 3);
+
+// It is better to name your function for readability
+p.then(function extractId(v) {
+  return v.id;
+});
+// Now here it is again but with an anonymous arrow function
+p.then(v => v.id);
