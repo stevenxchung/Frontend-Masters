@@ -58,3 +58,16 @@ var obj = {
 };
 
 obj.foo(); // 42
+
+// Now we do it for the arrow function
+var obj = {
+  id: 42,
+  foo: function foo() {
+    setTimeout(() => {
+      // The arrow function does not have a 'this' so we get it for free
+      console.log(this.id);
+    }, 100);
+  }
+};
+
+obj.foo(); // 42
