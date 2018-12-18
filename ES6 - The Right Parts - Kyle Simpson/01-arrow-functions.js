@@ -7,6 +7,8 @@ function foo() {
   return 2;
 }
 
+// ==================================================
+
 // Syntax variations
 // There are various ways to write the arrow function
 /*
@@ -26,6 +28,8 @@ var foo = x => 3;
 foo.name; // 'foo'
 // However, most of the arrow functions you will write will be anonymous
 foo(x => 3);
+
+// ==================================================
 
 // It is better to name your function for readability
 p.then(function extractId(v) {
@@ -71,3 +75,5 @@ var obj = {
 };
 
 obj.foo(); // 42
+
+// ==================================================
