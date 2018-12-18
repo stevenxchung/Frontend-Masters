@@ -33,3 +33,28 @@ p.then(function extractId(v) {
 });
 // Now here it is again but with an anonymous arrow function
 p.then(v => v.id);
+
+// So when is it preferred to use an arrow function?
+var obj = {
+  id: 42,
+  foo: function foo() {
+    setTimeout(function() {
+      // Here this.id is pointing at the global object not 42
+      console.log(this.id);
+    }, 100);
+  }
+};
+
+obj.foo(); // undefined
+
+// Here's how we solved this without arrow functions
+var obj = {
+  id: 42,
+  foo: function foo() {
+    setTimeout(function() {
+      console.log(this.id);
+    }.bind(this), 100);
+  }
+};
+
+obj.foo(); // 42
