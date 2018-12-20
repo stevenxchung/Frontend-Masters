@@ -94,6 +94,7 @@
 // ==================================================
 
 // Solution
+// Much shorter but you lose the readability of the code
 ((foo, p, list1, list2) => {
   (foo = (x, y = x * 2) =>
     function bar(z, baz, obj) {
