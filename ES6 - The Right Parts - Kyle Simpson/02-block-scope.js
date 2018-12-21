@@ -27,7 +27,22 @@ function foo(x, y) {
 // In general, the var keyword is intended to be used across the whole function
 // The let keyword is intended to be used to signal to the reader that the scope is limited
 function foo(x, y) {
-  var z = x * 2
+  var z = x * 2;
+  if (x < y) {
+    let tmp = x;
+    x = y;
+    y = tmp;
+  }
+  for (let i = 0; i < 10; i++) {}
+}
+
+// But we have to still be careful with let...
+function foo(x, y) {
+  // Here we try to find an error
+  // However, because z is only declared inside the try-catch, another error will be thrown stating that z does not exist
+  try {
+    let z = bar(x * 2);
+  } catch (err) {}
   if (x < y) {
     let tmp = x;
     x = y;
