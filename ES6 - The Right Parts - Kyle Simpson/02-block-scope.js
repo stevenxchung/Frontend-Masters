@@ -50,3 +50,17 @@ function foo(x, y) {
   }
   for (let i = 0; i < 10; i++) {}
 }
+
+// We can resolve this issue by declaring z outside of the try catch but this increases the scope of z to be available throughout the scope of foo()
+function foo(x, y) {
+  let z;
+  try {
+    z = bar(x * 2);
+  } catch (err) {}
+  if (x < y) {
+    let tmp = x;
+    x = y;
+    y = tmp;
+  }
+  for (let i = 0; i < 10; i++) {}
+}
