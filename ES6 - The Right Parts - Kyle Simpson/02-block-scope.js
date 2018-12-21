@@ -23,3 +23,15 @@ function foo(x, y) {
   // The variable i cannot be used outside of the loop
   for (let i = 0; i < 10; i++) {}
 }
+
+// In general, the var keyword is intended to be used across the whole function
+// The let keyword is intended to be used to signal to the reader that the scope is limited
+function foo(x, y) {
+  var z = x * 2
+  if (x < y) {
+    let tmp = x;
+    x = y;
+    y = tmp;
+  }
+  for (let i = 0; i < 10; i++) {}
+}
