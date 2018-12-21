@@ -64,3 +64,20 @@ function foo(x, y) {
   }
   for (let i = 0; i < 10; i++) {}
 }
+
+// But what if your code is 1000 lines complicated and readability becomes an issue?
+// We should declare z twice but let only allows you to declare z once
+function foo(x, y) {
+  // Here we use var in this example because var allows you to declare z more than once
+  // We do this mainly for readability, which may or may not be needed depending on the code
+
+  // if ( ... ) {
+  //   var z = ...
+  //   // 1000 lines of code later...
+  // } else if ( ... ) {
+  //   var z = ...
+  //   // 1000 lines of code later...
+  // } else {
+  //   var z = ...
+  // }
+}
