@@ -95,7 +95,7 @@ function foo(x, y) {
 
 function foo(x, y) {
   // Here i is created 10 times
-  for (var i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     $('#btn' + i).click(function () {
       console.log(' button ' + i + 'clicked!');
     });
