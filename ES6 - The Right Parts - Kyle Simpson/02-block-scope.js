@@ -70,7 +70,6 @@ function foo(x, y) {
 function foo(x, y) {
   // Here we use var in this example because var allows you to declare z more than once
   // We do this mainly for readability, which may or may not be needed depending on the code
-
   // if ( ... ) {
   //   var z = ...
   //   // 1000 lines of code later...
@@ -80,4 +79,25 @@ function foo(x, y) {
   // } else {
   //   var z = ...
   // }
+}
+
+// ==================================================
+
+
+function foo(x, y) {
+  // Here i is only one variable
+  for (var i = 0; i < 10; i++) {
+    $('#btn' + i).click(function () {
+      console.log(' button ' + i + 'clicked!');
+    });
+  }
+}
+
+function foo(x, y) {
+  // Here i is created 10 times
+  for (var i = 0; i < 10; i++) {
+    $('#btn' + i).click(function () {
+      console.log(' button ' + i + 'clicked!');
+    });
+  }
 }
