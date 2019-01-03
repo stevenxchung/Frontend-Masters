@@ -86,7 +86,7 @@ function foo(x, y) {
 function foo(x, y) {
   // Here i is only one variable
   for (var i = 0; i < 10; i++) {
-    $('#btn' + i).click(function () {
+    $('#btn' + i).click(function() {
       console.log(' button ' + i + 'clicked!');
     });
   }
@@ -95,10 +95,36 @@ function foo(x, y) {
 function foo(x, y) {
   // Here i is created 10 times
   for (let i = 0; i < 10; i++) {
-    $('#btn' + i).click(function () {
+    $('#btn' + i).click(function() {
       console.log(' button ' + i + 'clicked!');
     });
   }
 }
+
+// ==================================================
+
+function foo(x, y) {
+  if (x > y) {
+    // Constant is a variable that cannot be reassigned
+    {
+      const x = 2,
+        y = x * 3;
+      // ...
+    }
+  }
+}
+
+// Here x cannot be reassigned
+const x = 3;
+
+// However using const does not mean the result will not change
+const x = [1, 2, 3];
+// The result of foo could change
+function foo(x) {
+  // ...
+}
+
+// If we want x to be immutable use Object.freeze()
+const x = Object.freeze([1, 2, 3]);
 
 // ==================================================
