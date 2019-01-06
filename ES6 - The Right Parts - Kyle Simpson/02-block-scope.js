@@ -135,3 +135,14 @@ const x = Object.freeze([1, 2, 3]);
 // Here PI is a const as the mathematical pi is defined
 // The reader is less likely to be confused whether or not PI is a const
 const PI = 3.14;
+
+// Here someFunction cannot be reassigned to a different value, however that does not mean that the result of someFunction() will be constant
+var i = 0;
+
+const someFunction = () => {
+  i++;
+  console.log(i);
+  return i;
+};
+
+document.body.addEventListener('click', someFunction, true);
