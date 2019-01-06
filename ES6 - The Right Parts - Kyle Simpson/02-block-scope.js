@@ -83,6 +83,7 @@ function foo(x, y) {
 
 // ==================================================
 
+// What's the difference between var and let?
 function foo(x, y) {
   // Here i is only one variable
   for (var i = 0; i < 10; i++) {
@@ -103,6 +104,7 @@ function foo(x, y) {
 
 // ==================================================
 
+// What is const?
 function foo(x, y) {
   if (x > y) {
     // Constant is a variable that cannot be reassigned
@@ -119,7 +121,7 @@ const x = 3;
 
 // However using const does not mean the result will not change
 const x = [1, 2, 3];
-// The result of foo could change
+// The result of the function foo could change
 function foo(x) {
   // ...
 }
@@ -128,3 +130,8 @@ function foo(x) {
 const x = Object.freeze([1, 2, 3]);
 
 // ==================================================
+
+// When should we use const?
+// Here PI is a const as the mathematical pi is defined
+// The reader is less likely to be confused whether or not PI is a const
+const PI = 3.14;
