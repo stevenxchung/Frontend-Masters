@@ -19,7 +19,7 @@ function foo(x) {
 // Above we have the imperative form, below we have the declarative form
 // Here x will be 42 by default if undefined
 function foo(x = 42) {
-  // ...
+  return x;
 }
 
 foo(undefined); // 42
