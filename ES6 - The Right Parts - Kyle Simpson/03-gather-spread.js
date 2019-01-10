@@ -29,6 +29,8 @@ foo.apply(null, []); // 42
 
 // ==================================================
 // We can also assign functions to variables
+// How many times is bar() called before foo() is invoked?
+// 0
 function bar() {
   console.log('!');
 }
@@ -38,4 +40,4 @@ function foo(x = bar()) {
 }
 
 // How many times is bar() called when foo() is invoked?
-foo(); // 0, bar() is only called if needed this is called lazy expression
+foo(); // Here bar() is called once, bar() is only called if needed this is called lazy expression
