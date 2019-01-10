@@ -37,5 +37,5 @@ function foo(x = bar()) {
   return x;
 }
 
-// How many times is foo() called?
-foo();
+// How many times is bar() called when foo() is invoked?
+foo(); // 0, bar() is only called if needed this is called lazy expression
