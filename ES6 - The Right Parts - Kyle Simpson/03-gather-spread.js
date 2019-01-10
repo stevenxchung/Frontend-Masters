@@ -41,3 +41,15 @@ function foo(x = bar()) {
 
 // How many times is bar() called when foo() is invoked?
 foo(); // Here bar() is called once, bar() is only called if needed this is called lazy expression
+
+// When will we ever use lazy expressions?
+// Here if id is not provided for foo(), error message will be thrown
+function required() {
+  throw 'Parameter required!';
+}
+
+function foo(id = required()) {
+  return x;
+}
+
+foo();
