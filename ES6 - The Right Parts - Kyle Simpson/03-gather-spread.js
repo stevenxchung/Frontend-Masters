@@ -28,3 +28,14 @@ foo(undefined); // 42
 foo.apply(null, []); // 42
 
 // ==================================================
+// We can also assign functions to variables
+function bar() {
+  console.log('!');
+}
+
+function foo(x = bar()) {
+  return x;
+}
+
+// How many times is foo() called?
+foo();
