@@ -53,3 +53,34 @@ function foo(id = required()) {
 }
 
 foo();
+
+// Bonus 1
+// What does foo() return below?
+var x = 1;
+
+function foo(
+  x = 2,
+  f = function() {
+    return x;
+  }
+) {
+  console.log(f());
+}
+
+foo(); // 2
+
+// Bonus 2
+// What does foo() return below?
+var x = 1;
+
+function foo(
+  x = 2,
+  f = function() {
+    return x;
+  }
+) {
+  var x = 5;
+  console.log(f());
+}
+
+foo(); // 5, although Chrome returns 2, that is due to a bug
