@@ -118,3 +118,11 @@ function foo(...args) {
 // What is the difference between imperative and declarative?
 // Imperative programming includes all the implementation details of how
 // Declarative programming abstracts the details and lets us focus on the key implementation
+
+// Although there is support for default values for individual variables, default variables for spreaded arguments are not supported
+function foo(
+  x = 5, // Supported
+  ...args = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] // Not supported
+) {
+  // ...
+}
