@@ -107,3 +107,10 @@ function foo(...args) {
   // Here we use the ... to spread the array out
   bar(...args);
 }
+
+// ==================================================
+
+function foo(...args) {
+  // For spread operators, we can just add 42 on to the array
+  bar(42, ...args);
+}
