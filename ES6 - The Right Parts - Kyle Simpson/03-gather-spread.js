@@ -98,3 +98,12 @@ function foo() {
   // Pass args to bar
   bar.apply(null, args);
 }
+
+// Declarative form
+// Usage of ... depends on the context
+// Here ... gathers arguments together
+function foo(...args) {
+  args.unshift(42);
+  // Here we use the ... to spread the array out
+  bar(...args);
+}
