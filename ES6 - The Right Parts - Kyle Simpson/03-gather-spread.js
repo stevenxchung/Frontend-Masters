@@ -71,7 +71,7 @@ function foo(
 foo(); // 2
 
 // Bonus 2
-// What does foo() return below?
+// What does foo() return below?t
 var x = 1;
 
 function foo(
@@ -85,3 +85,16 @@ function foo(
 }
 
 foo(); // 5, although Chrome returns 2, that is due to a bug
+
+// ==================================================
+
+// Gather and spread operators
+// Imperative form
+function foo() {
+  // Get arguments
+  var args = [].slice.call(arguments);
+  // Add something to args
+  args.unshift(42);
+  // Pass args to bar
+  bar.apply(null, args);
+}
