@@ -28,6 +28,7 @@ foo(undefined); // 42
 foo.apply(null, []); // 42
 
 // ==================================================
+
 // We can also assign functions to variables
 // How many times is bar() called before foo() is invoked?
 // 0
