@@ -114,3 +114,7 @@ function foo(...args) {
   // For spread operators, we can just add 42 on to the array
   bar(42, ...args);
 }
+
+// What is the difference between imperative and declarative?
+// Imperative programming includes all the implementation details of how
+// Declarative programming abstracts the details and lets us focus on the key implementation
