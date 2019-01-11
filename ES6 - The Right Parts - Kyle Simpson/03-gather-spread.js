@@ -91,7 +91,7 @@ foo(); // 5, although Chrome returns 2, that is due to a bug
 // Gather and spread operators
 // Imperative form
 function foo() {
-  // Get arguments
+  // Gather arguments
   var args = [].slice.call(arguments);
   // Add something to args
   args.unshift(42);
