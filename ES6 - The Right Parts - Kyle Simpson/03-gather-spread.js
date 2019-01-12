@@ -121,8 +121,16 @@ function foo(...args) {
 
 // Although there is support for default values for individual variables, default variables for spreaded arguments are not supported
 function foo(
-  x = 5, // Supported
-  ...args = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] // Not supported
+  x = 5 // Supported
+  // ...args = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] // Not supported
 ) {
   // ...
 }
+
+// ==================================================
+
+// Gathering and spreading arrays
+// Imperative form
+var x = [1, 2, 3];
+var y = [4, 5];
+var z = [0].concat(x, y, [6]);
