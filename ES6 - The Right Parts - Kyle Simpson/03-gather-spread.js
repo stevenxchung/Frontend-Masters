@@ -134,3 +134,8 @@ function foo(
 var x = [1, 2, 3];
 var y = [4, 5];
 var z = [0].concat(x, y, [6]);
+
+// Declarative form
+var x = [1, 2, 3]
+var y = [4, 5]
+var z = [0, ...x, ...y, 6]
