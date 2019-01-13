@@ -12,3 +12,19 @@ function bar() {
 console.log(bar().join('') === '281012');
 
 // ==================================================
+
+// Initial attempt
+function foo(x1, x2) {
+  return [x1[0], ...x2.splice(1)];
+}
+
+function bar() {
+  var a1 = [2, 4];
+  var a2 = [6, 8, 10, 12];
+
+  return foo(a1, a2);
+}
+
+// Log output
+console.log(bar().join(''));
+console.log(bar().join('') === '281012');
