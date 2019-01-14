@@ -139,3 +139,31 @@ var z = [0].concat(x, y, [6]);
 var x = [1, 2, 3];
 var y = [4, 5];
 var z = [0, ...x, ...y, 6];
+
+// ==================================================
+
+// What is Babel?
+// Babel is a JavaScript compiler that allows code to be browser-compatible
+// The value of writing in ES6 is that it allows us to better communicate code
+
+// ES6 Code
+function foo(x = 42, ...args) {
+  bar(10, ...args, 100);
+}
+
+function bar() {}
+
+// Babel output
+"use strict";
+
+function foo() {
+  var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 42;
+
+  for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  bar.apply(undefined, [10].concat(args, [100]));
+}
+
+function bar() {}
