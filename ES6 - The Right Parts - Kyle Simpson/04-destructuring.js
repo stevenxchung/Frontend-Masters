@@ -16,3 +16,17 @@ function foo() {
 }
 
 var [a, b, c] = foo();
+
+// What if foo() only returns two items?
+function foo() {
+  return [1, 2];
+}
+// Here var at [c] will be undefined, var [a, b, c] is still valid
+var [a, b, c] = foo();
+
+// foo() can also return more than three items
+function foo() {
+  return [1, 2, 3, 4];
+}
+// Here var at [a, b, c] will be defined, however the [4] will be thrown away when foo() returns [1, 2, 3, 4]
+var [a, b, c] = foo();
