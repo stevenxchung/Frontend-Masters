@@ -53,3 +53,14 @@ var [
   b = 42,
   c
 ] = foo();
+
+// What if tmp[0] was undefined?
+function foo() {
+  return null;
+}
+// tmp[0] would return a JavaScript error since foo() returns null
+var [
+  a,
+  b = 42,
+  c
+] = foo();
