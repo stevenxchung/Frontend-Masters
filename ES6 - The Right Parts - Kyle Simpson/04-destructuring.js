@@ -64,3 +64,14 @@ var [
   b = 42,
   c
 ] = foo();
+
+// We can guard against null by issuing an alterative return of []
+function foo() {
+  return null;
+}
+
+var [
+  a,
+  b = 42,
+  c
+] = foo() || [];
