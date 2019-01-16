@@ -47,7 +47,7 @@ var c = tmp[2];
 function foo() {
   return [1, 2, 3];
 }
-
+// Here it's easier to read
 var [
   a,
   b = 42,
