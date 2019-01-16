@@ -75,3 +75,29 @@ var [
   b = 42,
   c
 ] = foo() || [];
+
+// What if we only want to account for the first three values?
+function foo() {
+  return [1, 2, 3, 4, 5, 6];
+}
+// Use the gather operator (assignment context)
+var [
+  a,
+  b = 42,
+  c,
+  ...args
+] = foo() || [];
+
+// What about adding an object?
+function foo() {
+  return [1, 2, 3];
+}
+// This is still valid
+var o = {};
+
+[
+  o.a,
+  o.b = 42,
+  o.c,
+  ...o.args
+] = foo() || [];
