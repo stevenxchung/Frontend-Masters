@@ -30,3 +30,26 @@ function foo() {
 }
 // Here var at [a, b, c] will be defined, however the [4] will be thrown away when foo() returns [1, 2, 3, 4]
 var [a, b, c] = foo();
+
+// ==================================================
+
+// Setting the default value imperatively
+function foo() {
+  return [1, 2, 3];
+}
+
+var tmp = foo();
+var a = tmp[0];
+var b = tmp[1] !== undefined ? tmp[1] : 42;
+var c = tmp[2];
+
+// Setting the default value declaratively
+function foo() {
+  return [1, 2, 3];
+}
+
+var [
+  a,
+  b = 42,
+  c
+] = foo();
