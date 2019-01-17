@@ -101,3 +101,17 @@ var o = {};
   o.c,
   ...o.args
 ] = foo() || [];
+
+// ==================================================
+
+// Here's how swapping is typically done
+{
+  let tmp = x;
+  x = y;
+  y = tmp;
+}
+
+// Declaratively we can destructure the array like so
+var x = 10, y = 20;
+
+[x, y] = [y, x];
