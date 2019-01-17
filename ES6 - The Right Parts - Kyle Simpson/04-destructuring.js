@@ -113,9 +113,18 @@ var a = [1, 2, 3];
 [, , ...a] = [0, ...a, 4];
 
 // This is what happens in the browser
-"use strict";
+('use strict');
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  } else {
+    return Array.from(arr);
+  }
+}
 
 // But you can actually do this
 var a = [1, 2, 3];
@@ -125,3 +134,14 @@ var _ref = [0].concat(_toConsumableArray(a), [4]);
 
 a = _ref.slice(2);
 _ref;
+
+// ==================================================
+
+// We can also destructure nested arrays
+function foo() {
+  return [1, 2, 3, [4, 5, 6]];
+}
+
+var a, b, c, args;
+
+[a, b = 42, c, ...args] = foo() || [];
