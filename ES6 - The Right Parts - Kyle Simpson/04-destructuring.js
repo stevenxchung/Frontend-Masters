@@ -48,45 +48,28 @@ function foo() {
   return [1, 2, 3];
 }
 // Here it's easier to read
-var [
-  a,
-  b = 42,
-  c
-] = foo();
+var [a, b = 42, c] = foo();
 
 // What if tmp[0] was undefined?
 function foo() {
   return null;
 }
 // tmp[0] would return a JavaScript error since foo() returns null
-var [
-  a,
-  b = 42,
-  c
-] = foo();
+var [a, b = 42, c] = foo();
 
 // We can guard against null by issuing an alterative return of []
 function foo() {
   return null;
 }
 
-var [
-  a,
-  b = 42,
-  c
-] = foo() || [];
+var [a, b = 42, c] = foo() || [];
 
 // What if we only want to account for the first three values?
 function foo() {
   return [1, 2, 3, 4, 5, 6];
 }
 // Use the gather operator (assignment context)
-var [
-  a,
-  b = 42,
-  c,
-  ...args
-] = foo() || [];
+var [a, b = 42, c, ...args] = foo() || [];
 
 // What about adding an object?
 function foo() {
@@ -95,12 +78,7 @@ function foo() {
 // This is still valid
 var o = {};
 
-[
-  o.a,
-  o.b = 42,
-  o.c,
-  ...o.args
-] = foo() || [];
+[o.a, o.b = 42, o.c, ...o.args] = foo() || [];
 
 // ==================================================
 
@@ -111,7 +89,20 @@ var o = {};
   y = tmp;
 }
 
-// Declaratively we can destructure the array like so
-var x = 10, y = 20;
+// Declaratively we can swap like so
+var x = 10,
+  y = 20;
 
 [x, y] = [y, x];
+
+// How to swap out arrays
+var a = [1, 2, 3];
+
+[x, y, ...a] = [0, ...a, 4];
+
+// To add more readibility we can use var x
+var a = [1, 2, 3];
+// Dump variable
+var x;
+
+[x, x, ...a] = [0, ...a, 4];
