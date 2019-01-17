@@ -106,3 +106,8 @@ var a = [1, 2, 3];
 var x;
 
 [x, x, ...a] = [0, ...a, 4];
+
+// But you can actually do this
+var a = [1, 2, 3];
+// This is still valid
+[, , ...a] = [0, ...a, 4];
