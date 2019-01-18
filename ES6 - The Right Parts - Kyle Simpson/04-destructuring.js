@@ -145,3 +145,20 @@ function foo() {
 var a, b, c, args, d, e;
 // We can also replace [d, , e] with [...args]
 [a, b = 42, c, [d, , e]] = foo() || [];
+
+// Is this syntax valid?
+function foo() {
+  return [1, 2, 3, [4, 5, 6]];
+}
+
+var a, b;
+// This assignment is still valid, destructuring breaks down the array into a pattern
+var x = ([a, b] = foo());
+
+// Can we combine patterns?
+function foo() {
+  return [1, 2, 3, [4, 5, 6]];
+}
+var a, b, c, d, args;
+// We can combine patterns to destructure an array
+[, , , [c, d]] = [a, b, ...args] = foo();
