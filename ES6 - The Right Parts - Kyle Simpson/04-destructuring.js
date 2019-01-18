@@ -142,6 +142,6 @@ function foo() {
   return [1, 2, 3, [4, 5, 6]];
 }
 
-var a, b, c, args;
+var a, b, c, args, d, e;
 
-[a, b = 42, c, ...args] = foo() || [];
+[a, b = 42, c, [d, , e]] = foo() || [];
