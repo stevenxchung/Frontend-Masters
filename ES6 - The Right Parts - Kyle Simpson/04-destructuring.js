@@ -165,3 +165,16 @@ var a, b, c, d, args;
 
 console.log([a, b, ...args]); // [1, 2, 3, [4, 5, 6]]
 console.log([, , , [c, d]]); // [, [4, 5]]
+
+// ==================================================
+
+// Lets explore object destructuring
+// Imperative, pre-ES6 object destructuring
+function foo() {
+  return { a:1, b:2, c:3 };
+}
+
+var tmp = foo();
+var a = tmp.a;
+var b = tmp.b !== undefined ? tmp.b : 42;
+var c = tmp.c;
