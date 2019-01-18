@@ -141,7 +141,7 @@ _ref;
 function foo() {
   return [1, 2, 3, [4, 5, 6]];
 }
-
+// General assignment syntax
 var a, b, c, args, d, e;
-
+// We can also replace [d, , e] with [...args]
 [a, b = 42, c, [d, , e]] = foo() || [];
