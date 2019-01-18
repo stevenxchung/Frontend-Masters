@@ -162,3 +162,6 @@ function foo() {
 var a, b, c, d, args;
 // We can combine patterns to destructure an array
 [, , , [c, d]] = [a, b, ...args] = foo();
+
+console.log([a, b, ...args]); // [1, 2, 3, [4, 5, 6]]
+console.log([, , , [c, d]]); // [, [4, 5]]
