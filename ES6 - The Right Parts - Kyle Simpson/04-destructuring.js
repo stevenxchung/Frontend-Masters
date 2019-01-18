@@ -186,3 +186,10 @@ function foo() {
 
 // To assign X to 2, where X is the target not the source
 var { a, b: X, c } = foo();
+
+// We can also add a default value
+function foo() {
+  return { a: 1, b: 2, c: 3 };
+}
+// Guarding against null values also apply
+var { a = 10, b: X = 42, c } = foo() || {};
