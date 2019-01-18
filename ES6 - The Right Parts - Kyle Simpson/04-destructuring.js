@@ -171,10 +171,18 @@ console.log([, , , [c, d]]); // [, [4, 5]]
 // Lets explore object destructuring
 // Imperative, pre-ES6 object destructuring
 function foo() {
-  return { a:1, b:2, c:3 };
+  return { a: 1, b: 2, c: 3 };
 }
 
 var tmp = foo();
 var a = tmp.a;
 var b = tmp.b !== undefined ? tmp.b : 42;
 var c = tmp.c;
+
+// Declarative, ES5 object destructuring
+function foo() {
+  return { a: 1, b: 2, c: 3 };
+}
+
+// To assign X to 2, where X is the target not the source
+var { a, b: X, c } = foo();
