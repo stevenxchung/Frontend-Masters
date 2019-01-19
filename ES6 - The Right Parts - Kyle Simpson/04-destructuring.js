@@ -193,3 +193,17 @@ function foo() {
 }
 // Guarding against null values also apply
 var { a = 10, b: X = 42, c } = foo() || {};
+
+// ==================================================
+
+// As with nested array destructuring, we could also have nested object destructuring
+function foo() {
+  return { a: 1, b: 2, c: 3, d: { e: 4 } };
+}
+// Here d needs to match the destructuring pattern with { e }
+var {
+  a = 10,
+  b: X = 42,
+  c,
+  d: { e }
+} = foo() || {};
