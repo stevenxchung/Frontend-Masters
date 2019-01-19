@@ -207,3 +207,15 @@ var {
   c,
   d: { e }
 } = foo() || {};
+
+// Here d does not exist as a return value for foo()
+function foo() {
+  return { a: 1, b: 2, c: 3 };
+}
+// Property d needs to have a default value of {}
+var {
+  a = 10,
+  b: X = 42,
+  c,
+  d: { e } = {}
+} = foo() || {};
