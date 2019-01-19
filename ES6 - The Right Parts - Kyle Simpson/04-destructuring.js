@@ -213,13 +213,17 @@ function foo() {
   return { a: 1, b: 2, c: 3 };
 }
 // Property d needs to have a default value of {}
-var {
-  a = 10,
-  b: X = 42,
-  c,
-  d: { e } = {}
-} = foo() || {};
+var { a = 10, b: X = 42, c, d: { e } = {} } = foo() || {};
 
 // Let's say we have a pattern like this
 // { a: X = 2 } = ...
 // First the computer will look to see if there is an 'a' property in the expected object, if not, it will get the default value 2 in place of the property which would otherwise be undefined
+
+// An alternative way to write nested object destructuring
+function foo() {
+  return { a: 1, b: 2, c: 3 };
+}
+
+var a, X, c, e;
+// Must have parenthesis
+({ a = 10, b: X = 42, c, d: { e } = {} } = foo() || {});
