@@ -1,3 +1,3 @@
 # Frontend Masters
 
-Houses coursework from Frontend Masters Workshops.
+Coursework and notes from Frontend Masters Workshops.
