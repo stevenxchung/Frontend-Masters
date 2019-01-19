@@ -168,7 +168,7 @@ console.log([, , , [c, d]]); // [, [4, 5]]
 
 // ==================================================
 
-// Lets explore object destructuring
+// Let's explore object destructuring
 // Imperative, pre-ES6 object destructuring
 function foo() {
   return { a: 1, b: 2, c: 3 };
@@ -219,3 +219,7 @@ var {
   c,
   d: { e } = {}
 } = foo() || {};
+
+// Let's say we have a pattern like this
+// { a: X = 2 } = ...
+// First the computer will look to see if there is an 'a' property in the expected object, if not, it will get the default value 2 in place of the property which would otherwise be undefined
