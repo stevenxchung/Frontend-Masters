@@ -227,3 +227,12 @@ function foo() {
 var a, X, c, e;
 // Must have parenthesis
 ({ a = 10, b: X = 42, c, d: { e } = {} } = foo() || {});
+
+// ==================================================
+
+// Destructuring is applicable to function parameters
+function foo([a, b, c]) {
+  console.log(a, b, c);
+}
+// What will happen here?
+foo(1, 2, 3); // Returns undefined
