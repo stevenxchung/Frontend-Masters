@@ -243,3 +243,11 @@ function foo([a, b, c] = []) {
 }
 // What will happen here?
 foo([1, 2, 3]); // Returns 1, 2, 3
+
+// What about objects?
+// For any function that takes three or more arguments, object destructuring could help organize function parameters
+function foo({ a = 1, b = 2, c = 3 } = {}) {
+  console.log(a, b, c);
+}
+// Here it does not matter if we leave out a property or the order is different
+foo({ c: 10, b: 20 });
