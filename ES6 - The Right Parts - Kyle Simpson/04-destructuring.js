@@ -236,3 +236,10 @@ function foo([a, b, c]) {
 }
 // What will happen here?
 foo(1, 2, 3); // Returns undefined
+
+// The more proper way to destructure function parameters
+function foo([a, b, c] = []) {
+  console.log(a, b, c);
+}
+// What will happen here?
+foo([1, 2, 3]); // Returns 1, 2, 3
