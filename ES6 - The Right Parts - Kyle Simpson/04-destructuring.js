@@ -251,3 +251,23 @@ function foo({ a = 1, b = 2, c = 3 } = {}) {
 }
 // Here it does not matter if we leave out a property or the order is different
 foo({ c: 10, b: 20 });
+
+// ==================================================
+
+// More examples of advanced destructuring
+// Let's take a look at how we would destructure and then restructure
+var defaults = {
+  method: 'POST',
+  callback: function() {},
+  headers: {
+    'content-type': 'text/plaintext'
+  }
+};
+
+var config = {
+  url: 'http://www.google.com',
+  callback: foo,
+  headers: {
+    'x-requested-with': 'foo'
+  }
+};
