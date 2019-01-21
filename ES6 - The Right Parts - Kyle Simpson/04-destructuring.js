@@ -282,7 +282,7 @@ var config = {
     url,
     callback = defaults.callback,
     headers: {
-      'content-type': contentType = defatuls.headers['content-type'],
+      'content-type': contentType = defaults.headers['content-type'],
       'x-requested-with': xRequestedWith
     }
   } = config;
