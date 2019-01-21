@@ -254,13 +254,14 @@ foo({ c: 10, b: 20 });
 
 // ==================================================
 
-// More examples of advanced destructuring
+// More examples of advanced destructuring...
 // Let's take a look at how we would destructure and then restructure
+// Normally we could use a utility or some plugin to mix these two objects together
 var defaults = {
   method: 'POST',
   callback: function() {},
   headers: {
-    'content-type': 'text/plaintext'
+    'content-type': 'text/plain'
   }
 };
 
@@ -271,3 +272,28 @@ var config = {
     'x-requested-with': 'foo'
   }
 };
+
+// However, since we know of destructuring, we can leverage that to destructure the defaults and config object
+{
+  // Let's grab what we want our mixed object to look like
+  let {
+    // Here we destructure the defaults and config object and grab what we want
+    method = defaults.method,
+    url,
+    callback = defaults.callback,
+    headers: {
+      'content-type': contentType = defatuls.headers['content-type'],
+      'x-requested-with': xRequestedWith
+    }
+  } = config;
+  // Restructure objects into config object
+  config = {
+    method,
+    url,
+    callback,
+    headers: {
+      'content-type': contentType,
+      'x-requested-with': xRequestedWith
+    }
+  }
+}
