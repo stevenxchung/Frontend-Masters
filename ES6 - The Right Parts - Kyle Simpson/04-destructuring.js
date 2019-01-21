@@ -300,7 +300,7 @@ var config = {
 
 // We actually do not need to call defaults.<object property> we can just insert the values to make the destructuring pattern more readable
 {
-  // Set method, callback, and headers['content-type'] to be their default values
+  // Set method, callback, and headers['content-type'] to be their explicit default values
   let {
     method = 'POST',
     url,
