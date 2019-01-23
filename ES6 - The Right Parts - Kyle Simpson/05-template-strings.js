@@ -22,3 +22,19 @@ var obj = {
   a,
   b() {}
 };
+
+// However, when we use concise methods the function is anonymous
+var obj = {
+  a,
+  // The property 'b' is an anonymous function
+  b: function() {}
+}
+// Babel's equivalent
+"use strict";
+
+var obj = {
+  a: a,
+  // But wait... this is not an anonymous function...
+  // It turns out this is how Babel names functions (easiest way)
+  b: function b() {}
+};
