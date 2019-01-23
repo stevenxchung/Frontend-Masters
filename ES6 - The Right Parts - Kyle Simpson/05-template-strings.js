@@ -38,3 +38,22 @@ var obj = {
   // It turns out this is how Babel names functions (easiest way)
   b: function b() {}
 };
+// If we try to convert b() {} to b() { b() }, suddenly Babel's equivalent is much more complex
+"use strict";
+
+var obj = {
+  a: a,
+  b: function (_b) {
+    function b() {
+      return _b.apply(this, arguments);
+    }
+
+    b.toString = function () {
+      return _b.toString();
+    };
+
+    return b;
+  }(function () {
+    b();
+  })
+};
