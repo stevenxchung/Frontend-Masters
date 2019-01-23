@@ -1,5 +1,6 @@
 // Exercise 3
 function ajax(url, cb) {
+  // Fake ajax response
   cb({
     foo: 2,
     baz: [6, 8, 10],
@@ -31,8 +32,14 @@ var defaults = {
   }
 };
 
+// Will receive and destructure object
 function response() {
+  // Will take and arguments and restructure objects
   check({});
 }
 
 ajax('http://fun.tld, response');
+
+// ==================================================
+
+// Initial attempt
