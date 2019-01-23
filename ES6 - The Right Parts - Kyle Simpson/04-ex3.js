@@ -38,8 +38,6 @@ function response() {
   check({});
 }
 
-ajax('http://fun.tld, response');
+ajax('http://fun.tld', response);
 
 // ==================================================
-
-// Initial attempt
