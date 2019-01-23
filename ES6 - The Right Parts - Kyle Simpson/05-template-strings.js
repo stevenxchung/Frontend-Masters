@@ -10,3 +10,15 @@ var obj = {
   // This is by using concise properties
   a
 };
+
+// We also have concise methods
+// Before we would write something like this
+var obj = {
+  a,
+  b: function() {}
+};
+// Concise methods look like this
+var obj = {
+  a,
+  b() {}
+};
