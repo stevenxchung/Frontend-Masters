@@ -28,9 +28,9 @@ var obj = {
   a,
   // The property 'b' is an anonymous function
   b: function() {}
-}
+};
 // Babel's equivalent
-"use strict";
+('use strict');
 
 var obj = {
   a: a,
@@ -39,21 +39,34 @@ var obj = {
   b: function b() {}
 };
 // If we try to convert b() {} to b() { b() }, suddenly Babel's equivalent is much more complex
-"use strict";
+('use strict');
 
 var obj = {
   a: a,
-  b: function (_b) {
+  b: (function(_b) {
     function b() {
       return _b.apply(this, arguments);
     }
 
-    b.toString = function () {
+    b.toString = function() {
       return _b.toString();
     };
 
     return b;
-  }(function () {
+  })(function() {
     b();
   })
+};
+
+// What if we use hello world as the property name?
+var obj = {
+  a,
+  'hello world'() {}
+};
+// It turns out that this is not in the spec, Babel came up with their own way around it
+'use strict';
+
+var obj = {
+  a: a,
+  'hello world': function helloWorld() {}
 };
