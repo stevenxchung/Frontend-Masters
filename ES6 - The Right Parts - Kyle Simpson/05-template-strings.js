@@ -64,9 +64,21 @@ var obj = {
   'hello world'() {}
 };
 // It turns out that this is not in the spec, Babel came up with their own way around it
-'use strict';
+('use strict');
 
 var obj = {
   a: a,
   'hello world': function helloWorld() {}
+};
+
+// We can also have computed properties
+var a = 1;
+var c = 'hello';
+var obj = {
+  a,
+  b() {},
+  // [c] is actually 'hello'
+  [c]: 42,
+  // Computed properties can also be used for method names
+  [c + 'fn']() {}
 };
