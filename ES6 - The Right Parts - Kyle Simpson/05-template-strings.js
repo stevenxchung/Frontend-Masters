@@ -58,7 +58,7 @@ var obj = {
   })
 };
 
-// What if we use hello world as the property name?
+// What if we use 'hello world' as the concise method name?
 var obj = {
   a,
   'hello world'() {}
