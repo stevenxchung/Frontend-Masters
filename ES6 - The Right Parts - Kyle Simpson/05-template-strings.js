@@ -80,5 +80,9 @@ var obj = {
   // [c] is actually 'hello'
   [c]: 42,
   // Computed properties can also be used for method names
-  [c + 'fn']() {}
+  [c + 'fn']() {},
+  // Concise generator
+  *foo() {},
+  // Concise computed property which is also a generator
+  *[c + 'gn']() {}
 };
