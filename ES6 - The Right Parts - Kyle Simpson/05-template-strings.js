@@ -98,3 +98,13 @@ var msg =
   'Hello, ' + name + ', your order (#' + orderNumber + ') was $' + total + '.';
 
 console.log(msg);
+
+// With ES6 we can use use the backtick to interpolate variables
+var name = 'Steven';
+var orderNumber = '123';
+var total = '99.99';
+
+var msg =
+  `Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
+
+console.log(msg);
