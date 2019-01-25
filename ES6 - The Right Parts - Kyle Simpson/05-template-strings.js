@@ -86,3 +86,15 @@ var obj = {
   // Concise computed property which is also a generator
   *[c + 'gn']() {}
 };
+
+// ==================================================
+
+// Without string templating, this is how we interpolate variables into a sentence
+var name = 'Steven';
+var orderNumber = '123';
+var total = '99.99';
+
+var msg =
+  'Hello, ' + name + ', your order (#' + orderNumber + ') was $' + total + '.';
+
+console.log(msg);
