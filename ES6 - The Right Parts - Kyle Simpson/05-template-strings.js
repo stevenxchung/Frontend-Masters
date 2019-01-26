@@ -111,7 +111,7 @@ console.log(msg);
 // ==================================================
 
 // It is also possible to use tag functions for interpolation
-// Tag function serves as a pre-processor for strings such that formating variables is possible
+// Tag function serves as a pre-processor for strings such that formatting variables is possible
 function foo(strings, ...values) {
   // What goes here?
   var str = '';
