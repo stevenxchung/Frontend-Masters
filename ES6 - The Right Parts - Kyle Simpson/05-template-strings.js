@@ -155,4 +155,4 @@ var total = 405.5;
 
 var msg = foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 
-console.log(msg); // Hello, Steven, your order (#123) was $99.99.
+console.log(msg); // Hello, Steven, your order (#123) was $405.50.
