@@ -92,7 +92,7 @@ var obj = {
 // Without string templating, this is how we interpolate variables into a sentence
 var name = 'Steven';
 var orderNumber = '123';
-var total = '99.99';
+var total = 99.99;
 
 var msg =
   'Hello, ' + name + ', your order (#' + orderNumber + ') was $' + total + '.';
@@ -102,26 +102,57 @@ console.log(msg);
 // With ES6 we can use use the backtick to interpolate variables
 var name = 'Steven';
 var orderNumber = '123';
-var total = '99.99';
+var total = 99.99;
 
-var msg =
-  `Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
+var msg = `Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 
 console.log(msg);
 
 // ==================================================
 
 // It is also possible to use tag functions for interpolation
-// Tag function serves as a pre-processor for strings
+// Tag function serves as a pre-processor for strings such that formating variables is possible
 function foo(strings, ...values) {
   // What goes here?
+  var str = '';
+  for (var i = 0; i < strings.length; i++) {
+    if (i > 0) str += values[i - 1];
+    str += strings[i];
+  }
+  return str;
 }
 
 var name = 'Steven';
 var orderNumber = '123';
-var total = '99.99';
+var total = 99.99;
 
-var msg =
-  foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
+var msg = foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 
-console.log(msg);
+console.log(msg); // Hello, Steven, your order (#123) was $99.99.
+
+// Another example: what if we want to make it such that numbers need 2 decimal places?
+function foo(strings, ...values) {
+  var str = '';
+  // Loop through array of strings
+  for (var i = 0; i < strings.length; i++) {
+    // If index is greater than zero check if number and make it 2 decimal places
+    if (i > 0) {
+      if (typeof values[i - 1] == 'number') {
+        str += values[i - 1].toFixed(2);
+      } else {
+        // Otherwise just append value to str
+        str += values[i - 1];
+      }
+    }
+    str += strings[i];
+  }
+  return str;
+}
+
+var name = 'Steven';
+var orderNumber = '123';
+var total = 405.5;
+
+var msg = foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
+
+console.log(msg); // Hello, Steven, your order (#123) was $99.99.
