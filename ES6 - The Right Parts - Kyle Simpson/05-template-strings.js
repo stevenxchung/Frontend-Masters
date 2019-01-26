@@ -156,3 +156,7 @@ var total = 405.5;
 var msg = currency`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 
 console.log(msg); // Hello, Steven, your order (#123) was $405.50.
+
+// Fun fact 1: tag functions are Turing Complete so you can actually write an entire programming language out of tag functions
+
+// Fun fact 2: JSX allows one to do HTML in JavaScript, JSX does it via tag function where it takes HTML tags and interpolates them into string templates
