@@ -130,12 +130,12 @@ var msg = foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 
 console.log(msg); // Hello, Steven, your order (#123) was $99.99.
 
-// Another example: what if we want to make it such that numbers need 2 decimal places?
+// Another example: what if we want to make it such that numbers need two decimal places?
 function currency(strings, ...values) {
   var str = '';
   // Loop through array of strings
   for (var i = 0; i < strings.length; i++) {
-    // If index is greater than zero check if number and make it 2 decimal places
+    // If index is greater than zero check if number and make it two decimal places
     if (i > 0) {
       if (typeof values[i - 1] == 'number') {
         str += values[i - 1].toFixed(2);
