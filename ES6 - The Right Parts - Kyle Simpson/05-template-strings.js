@@ -108,3 +108,20 @@ var msg =
   `Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 
 console.log(msg);
+
+// ==================================================
+
+// It is also possible to use tag functions for interpolation
+// Tag function serves as a pre-processor for strings
+function foo(strings, ...values) {
+  // What goes here?
+}
+
+var name = 'Steven';
+var orderNumber = '123';
+var total = '99.99';
+
+var msg =
+  foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
+
+console.log(msg);
