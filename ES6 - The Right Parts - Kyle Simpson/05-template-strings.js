@@ -131,7 +131,7 @@ var msg = foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 console.log(msg); // Hello, Steven, your order (#123) was $99.99.
 
 // Another example: what if we want to make it such that numbers need 2 decimal places?
-function foo(strings, ...values) {
+function currency(strings, ...values) {
   var str = '';
   // Loop through array of strings
   for (var i = 0; i < strings.length; i++) {
@@ -153,6 +153,6 @@ var name = 'Steven';
 var orderNumber = '123';
 var total = 405.5;
 
-var msg = foo`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
+var msg = currency`Hello, ${name}, your order (#${orderNumber}) was $${total}.`;
 
 console.log(msg); // Hello, Steven, your order (#123) was $405.50.
