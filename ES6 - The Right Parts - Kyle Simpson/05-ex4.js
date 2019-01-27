@@ -33,3 +33,24 @@ console.log(
   upper`Hello ${name} (@${twitter}), welcome to the ${className}!` ===
     'Hello STEVEN (@GETIFY), welcome to the ES6 WORKSHOP!'
 );
+
+// ==================================================
+
+// Solution
+function upper(strings, ...values) {
+  var str = '';
+  for (var i = 0; i < strings.length - 1; i++) {
+    if (i > 0) str += values[i - 1].toUpperCase();
+    str += strings[i];
+  }
+  return str;
+}
+
+var name = 'Steven',
+  twitter = 'getify',
+  className = 'es6 workshop';
+
+console.log(
+  upper`Hello ${name} (@${twitter}), welcome to the ${className}!` ===
+    'Hello STEVEN (@GETIFY), welcome to the ES6 WORKSHOP!'
+);
