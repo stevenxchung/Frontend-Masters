@@ -39,7 +39,7 @@ console.log(
 // Solution
 function upper(strings, ...values) {
   var str = '';
-  for (var i = 0; i < strings.length - 1; i++) {
+  for (var i = 0; i < strings.length; i++) {
     if (i > 0) str += values[i - 1].toUpperCase();
     str += strings[i];
   }
