@@ -24,3 +24,12 @@ console.log(obj); // {id: 123, Symbol(Hello World!): "This is a secret!"}
 
 // What if we try to get object keys from obj?
 Object.keys(obj); // ['id']
+
+// ==================================================
+
+// ES6 comes with well-known symbols
+// THese symbols serve as meta extension hooks
+Symbol.iterator
+Symbol.toStringTag
+Symbol.toPrimitive
+Symbol.isConcatSpreadable
