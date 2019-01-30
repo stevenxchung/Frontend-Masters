@@ -52,7 +52,13 @@ it.next(); // { value: 2, done: false }
 it.next(); // { value: 3, done: false }
 it.next(); // { value: undefined, done: true }
 
-// ES6 added for of iterators
+// ES6 added for loop with keyword of for iterators
 for (var v of arr) {
+  console.log(v);
+}
+
+// Also applicable to a string
+var str = 'Hello';
+for (var v of str) {
   console.log(v);
 }
