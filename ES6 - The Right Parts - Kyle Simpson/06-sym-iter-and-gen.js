@@ -29,14 +29,25 @@ Object.keys(obj); // ['id']
 
 // ES6 comes with well-known symbols
 // These symbols serve as meta extension hooks
-Symbol.iterator
-Symbol.toStringTag
-Symbol.toPrimitive
-Symbol.isConcatSpreadable
+Symbol.iterator;
+Symbol.toStringTag;
+Symbol.toPrimitive;
+Symbol.isConcatSpreadable;
 
 // ==================================================
 
 // What are iterators?
 // Iterators are a patterned way of stepping through a set of data on some data source
 // To designate a symbol which is an iterator
-Symbol.iterator
+Symbol.iterator;
+
+// We can use Symbol.iterator
+var arr = [1, 2, 3];
+var it = arr[Symbol.iterator]();
+
+// We can even call next() on the iterator
+// On the 4th iteration, value is undefined so done returns true - we are done iterating
+it.next(); // { value: 1, done: false }
+it.next(); // { value: 2, done: false }
+it.next(); // { value: 3, done: false }
+it.next(); // { value: undefined, done: true }
