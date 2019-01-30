@@ -33,3 +33,10 @@ Symbol.iterator
 Symbol.toStringTag
 Symbol.toPrimitive
 Symbol.isConcatSpreadable
+
+// ==================================================
+
+// What are iterators?
+// Iterators are a patterned way of stepping through a set of data on some data source
+// To designate a symbol which is an iterator
+Symbol.iterator
