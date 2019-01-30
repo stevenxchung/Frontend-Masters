@@ -51,3 +51,8 @@ it.next(); // { value: 1, done: false }
 it.next(); // { value: 2, done: false }
 it.next(); // { value: 3, done: false }
 it.next(); // { value: undefined, done: true }
+
+// ES6 added for of iterators
+for (var v of arr) {
+  console.log(v);
+}
