@@ -28,7 +28,7 @@ Object.keys(obj); // ['id']
 // ==================================================
 
 // ES6 comes with well-known symbols
-// THese symbols serve as meta extension hooks
+// These symbols serve as meta extension hooks
 Symbol.iterator
 Symbol.toStringTag
 Symbol.toPrimitive
