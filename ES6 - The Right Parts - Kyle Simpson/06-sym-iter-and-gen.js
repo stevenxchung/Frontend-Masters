@@ -62,3 +62,30 @@ var str = 'Hello';
 for (var v of str) {
   console.log(v);
 }
+
+// ==================================================
+
+// How do we make our own custom iterators?
+// Let's try to make this object into an iterable
+var obj = {
+  // Remember that an iterator is an object with a next() object attached to it
+  [Symbol.iterator]() {
+    var idx = this.start, en = this.end,
+    var it = {
+      // Use an arrow function since we need to use the keyword 'this' to refer to the idx variable in the outer scope
+      next: () => {
+        if (idx <= en) {
+          var v = this[idx];
+          idx++;
+          return { value: v, done: idx > en}
+        } else {
+          return { done: true };
+        }
+      }
+    };
+    return it;
+  },
+  values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],
+  start: 2,
+  end: 13
+};
