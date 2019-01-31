@@ -70,11 +70,14 @@ for (var v of str) {
 var obj = {
   // Remember that an iterator is an object with a next() object attached to it
   [Symbol.iterator]() {
+    // Initialize start and stop index
     var idx = this.start,
       en = this.end;
+    // Variable 'it' will return every value within specified range
     var it = {
       // Use an arrow function since we need to use the keyword 'this' to refer to the idx variable in the outer scope
       next: () => {
+        // Not done until start index becomes greater than the end index
         if (idx <= en) {
           var v = this.values[idx];
           idx++;
