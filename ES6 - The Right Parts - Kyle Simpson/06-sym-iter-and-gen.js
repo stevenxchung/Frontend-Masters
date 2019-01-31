@@ -94,5 +94,6 @@ var obj = {
   end: 13
 };
 
+// Spread object into array and declare as 'vals'
 var vals = [...obj];
 console.log(vals); // [ 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 ]
