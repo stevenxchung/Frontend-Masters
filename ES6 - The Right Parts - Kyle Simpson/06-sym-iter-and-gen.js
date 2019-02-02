@@ -137,3 +137,15 @@ function* main() {
 for (var v of main()) {
   console.log(v); // hello, 9, and world
 }
+
+// Generators are really state machines
+function* main() {
+  for (var i = 0; i < 5; i++) {
+    // Pause here each time until the next call, it remembers its state
+    yield i;
+  }
+}
+// Loop calls next() each time on main()
+for (var v of main()) {
+  console.log(v);
+}
