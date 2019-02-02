@@ -112,3 +112,16 @@ main(); // No output
 var it = main();
 // Generators can be stopped and started as many times as needed
 it.next(); // hello
+
+// By using yield, we can get main() to return different results
+function* main() {
+  console.log('hello');
+  yield 9;
+  console.log('world');
+  return 10;
+}
+
+var it = main();
+
+it.next(); // { value: 9, done: false }
+it.next(); // { value: 10, done: true }
