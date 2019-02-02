@@ -107,3 +107,8 @@ function* main() {
 }
 
 main(); // No output
+
+// Generators construct variables, then you can use iterators to control the generator
+var it = main();
+// Generators can be stopped and started as many times as needed
+it.next(); // hello
