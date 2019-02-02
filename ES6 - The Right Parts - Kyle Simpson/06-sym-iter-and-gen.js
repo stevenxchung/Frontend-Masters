@@ -97,3 +97,13 @@ var obj = {
 // Spread object into array and declare as 'vals'
 var vals = [...obj];
 console.log(vals); // [ 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 ]
+
+// ==================================================
+
+// What are generators?
+// Generators look similar to functions, they are in fact functions but they do not get called
+function* main() {
+  console.log('hello');
+}
+
+main(); // No output
