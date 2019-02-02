@@ -177,3 +177,17 @@ var obj = {
 
 var vals = [...obj];
 console.log(vals); // [ 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 ]
+
+// The obj iterator came be simplified
+var obj = {
+  // We can turn this into a generator with the '*'
+  *[Symbol.iterator]() {
+    // Loop over all values from start to end
+    for (var i = this.start; i <= this.end; i++) {
+      yield this.values[i];
+    }
+  },
+  values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],
+  start: 4,
+  end: 13
+};
