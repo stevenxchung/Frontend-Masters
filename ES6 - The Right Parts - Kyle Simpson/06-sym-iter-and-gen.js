@@ -125,3 +125,15 @@ var it = main();
 
 it.next(); // { value: 9, done: false }
 it.next(); // { value: 10, done: true }
+
+// What would happen here?
+function* main() {
+  console.log('hello');
+  yield 9;
+  console.log('world');
+  return 10; // Would be changed to yield to return hello, 9, world, and 10
+}
+// Done returns true before the value 10 is printed out
+for (var v of main()) {
+  console.log(v); // hello, 9, and world
+}
