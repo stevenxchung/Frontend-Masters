@@ -147,7 +147,7 @@ function* main() {
 }
 // Loop calls next() each time on main()
 for (var v of main()) {
-  console.log(v);
+  console.log(v); // 0, 1, 2, 3, 4
 }
 
 // ==================================================
