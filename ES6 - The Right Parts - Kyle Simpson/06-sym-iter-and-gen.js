@@ -178,7 +178,7 @@ var obj = {
 var vals = [...obj];
 console.log(vals); // [ 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 ]
 
-// The obj iterator came be simplified
+// The obj iterator came be simplified by using a generator
 var obj = {
   // We can turn this into a generator with the '*'
   *[Symbol.iterator]() {
