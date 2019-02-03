@@ -191,3 +191,6 @@ var obj = {
   start: 4,
   end: 13
 };
+
+var vals = [...obj];
+console.log(vals); // [ 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 ]
