@@ -33,13 +33,3 @@ for (let num of numbers.arrayGen()) {
 for (let num of numbers.arrayGen(start = 6, end = 30)) {
   console.log(num);
 }
-
-// let arrayGen = (start, end) => {
-//   let arr = [];
-//   for (var i = start; i <= end; i++) {
-//     arr.push(i);
-//   };
-//   return arr;
-// }
-
-// console.log(arrayGen(1, 5))
