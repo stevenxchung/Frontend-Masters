@@ -33,3 +33,28 @@ for (let num of numbers.arrayGen()) {
 for (let num of numbers.arrayGen((start = 6), (end = 30), (step = 4))) {
   console.log(num);
 }
+
+// ==================================================
+
+// Solution
+var numbers = {
+  *[Symbol.iterator]({ start = 0, step = 1, end = 100 } = {}) {
+    for (let i = start; i <= end; i += step) {
+      yield i;
+    }
+  }
+};
+
+// Should print 0 to 100 by 1s
+for (let num of numbers) {
+  console.log(num); // 1 ... 100
+}
+
+// Should print 6 to 30 in increments of 4
+for (let num of numbers[Symbol.iterator]({
+  start: 6,
+  step: 4,
+  end: 30
+})) {
+  console.log(num); // 6, 10, 14, 18, 22, 26, 30
+}
