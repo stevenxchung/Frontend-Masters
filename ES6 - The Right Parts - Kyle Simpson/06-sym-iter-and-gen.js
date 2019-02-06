@@ -205,3 +205,9 @@ Number.prototype[Symbol.iterator] = function*() {
 };
 
 console.log([...8]); // [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+// ==================================================
+
+// So what is the point of ES6?
+// The goal of ES6 is to write code that is more clear and self-descriptive
+// We like to optimize code more for the reader than the writer, in most cases it is for the writer only, ES6 tries to solve this problem
