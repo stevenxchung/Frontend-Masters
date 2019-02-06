@@ -194,3 +194,14 @@ var obj = {
 
 var vals = [...obj];
 console.log(vals); // [ 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 ]
+
+// ==================================================
+
+// Here's how we make a range in ES6
+Number.prototype[Symbol.iterator] = function*() {
+  for (var i = 0; i <= this; i++) {
+    yield i;
+  }
+};
+
+console.log([...8]); // [0, 1, 2, 3, 4, 5, 6, 7, 8]
